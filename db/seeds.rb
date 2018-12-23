@@ -5,17 +5,17 @@ Page.all.each { |page| page.delete}
 puts 'Smells like Christmas'
 
 puts 'Finding writers'
-u1 = User.create(name: 'Chett Tiller')
+u1 = User.create(name: 'Chett Tiller', bio:'Super interesting')
 puts '...1'
-u2 = User.create(name: 'Jesse Rice-Evans')
+u2 = User.create(name: 'Jesse Rice-Evans', bio:'Super fascinating')
 puts '...2'
-u3 = User.create(name: 'Mesha')
+u3 = User.create(name: 'Mesha', bio: 'Super cool')
 puts '...3'
-u4 = User.create(name: 'Matt Owens')
+u4 = User.create(name: 'Matt Owens', bio: 'Super fun')
 puts '...4'
-u5 = User.create(name: 'Mandy Gardner')
+u5 = User.create(name: 'Mandy Gardner', bio: 'Super exciting')
 puts '...5'
-u6 = User.create(name: 'Leah Shapiro')
+u6 = User.create(name: 'Leah Shapiro', bio: 'Super super')
 puts '...6'
 puts 'Writers chained to their desks'
 

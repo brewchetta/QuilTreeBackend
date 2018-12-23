@@ -7,6 +7,11 @@ class Api::V1::StoriesController < ApplicationController
     render json: @stories, status: 200
   end
 
+  def index_all
+    @stories = Story.all
+    render json: @stories, status: 200
+  end
+
   def show
     render json: @story, status: 200
   end

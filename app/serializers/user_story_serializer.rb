@@ -1,3 +1,3 @@
 class UserStorySerializer < ActiveModel::Serializer
-  attributes :id, :title
+  attributes :id, :title, :image
 end
