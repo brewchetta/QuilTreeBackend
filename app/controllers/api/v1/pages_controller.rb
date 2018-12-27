@@ -12,7 +12,9 @@ class Api::V1::PagesController < ApplicationController
   end
 
   def create
-    @page = Page.create(page_params)
+    @page = Page.new(page_params)
+    @page.number = @page.story.pages.length + 1
+    @page.save
     if @page.valid?
       render json: @page, status: 201
     else
