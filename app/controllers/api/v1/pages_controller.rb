@@ -23,6 +23,12 @@ class Api::V1::PagesController < ApplicationController
   end
 
   def update
+    @page.update(page_params)
+    if @page.valid?
+      render json: @page, status: 202
+    else
+      render json: @page.errors.full_messages, status: 406
+    end
   end
 
   def delete
