@@ -3,11 +3,6 @@ class Api::V1::StoriesController < ApplicationController
   before_action :find_user
 
   def index
-    @stories = @user.stories
-    render json: @stories, status: 200
-  end
-
-  def index_all
     @stories = Story.all
     render json: @stories, status: 200
   end
