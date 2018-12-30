@@ -1,5 +1,5 @@
 class Api::V1::PagesController < ApplicationController
-  before_action :find_page, only: [:show, :update, :delete]
+  before_action :find_page, only: [:show, :update, :destroy]
   before_action :find_story
 
   def index
@@ -31,19 +31,17 @@ class Api::V1::PagesController < ApplicationController
     end
   end
 
-  def delete
-    if @page
-      pages = Page.all.select{ |page| page.story_id === @page.story_id && page.number > @page.number }
-      pages.each do |page|
-        page.number = page.number - 1
-        page.save
-      end
-
-      @page.destroy
-      render json: @page, status: 202
-    else
-      render json: @page.errors.full_messages, status: 406
+  def destroy
+    # Find pages after that in the story
+    pages = Page.all.select{ |page| page.story_id === @page.story_id && page.number > @page.number }
+    # Shift those page numbers down
+    pages.each do |page|
+      page.number = page.number - 1
+      page.save
     end
+
+    @page.destroy
+    render json: @page, status: 202
   end
 
   private
