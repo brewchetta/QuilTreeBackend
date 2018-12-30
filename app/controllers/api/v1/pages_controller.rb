@@ -39,7 +39,7 @@ class Api::V1::PagesController < ApplicationController
       page.number = page.number - 1
       page.save
     end
-
+    # And finally destroy the page
     @page.destroy
     render json: @page, status: 202
   end
