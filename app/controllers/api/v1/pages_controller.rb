@@ -32,6 +32,15 @@ class Api::V1::PagesController < ApplicationController
   end
 
   def delete
+    if @page
+      pages = Page.all.select{ |page| page.story_id === @page.story_id && page.number > @page.number }
+      pages.each { |page| page.number - 1 }
+
+      @page.destroy
+      render json: @page, status: 202
+    else
+      render json: @page.errors.full_messages, status: 406
+    end
   end
 
   private
