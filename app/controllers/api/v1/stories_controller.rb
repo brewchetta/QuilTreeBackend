@@ -1,5 +1,5 @@
 class Api::V1::StoriesController < ApplicationController
-  before_action :find_story, only: [:show, :update, :delete]
+  before_action :find_story, only: [:show, :update, :destroy]
   before_action :find_user
 
   def index
@@ -23,7 +23,9 @@ class Api::V1::StoriesController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @story.destroy
+    render json: @story, status: 202
   end
 
   private
