@@ -9,21 +9,15 @@ Page.all.each { |page| page.delete}
 puts 'Smells like Christmas'
 
 puts 'Finding writers'
+puts '...'
 500.times do
-  puts '...'
-  User.create(name: names[rand(names.length - 1)] + ' ' + names[rand(names.length - 1)], bio:'A beautiful writer with at least ' + rand(10).to_s + ' unique attributes. We love them to death, like literally until they die. OMG I JUST THOUGHT OF SOMETHING. Oh woops, lost it. NO WAIT THERE IT IS AGAIN! Wait, nevermind. Clearly just filling space, toodleytoo. Did you hear what names ' + [rand(names.length - 1)] + ' said to ' + [rand(names.length - 1)] + '? I did not actually hear. What is a pirates favorite letter? A pirates first love is the C. Get it? Okay, we are done here.')
+  User.create(name: names[rand(names.length - 1)] + ' ' + names[rand(names.length - 1)], bio:'A beautiful writer with at least ' + rand(10).to_s + ' unique attributes. We love them to death, like literally until they die. OMG I JUST THOUGHT OF SOMETHING. Oh woops, lost it. NO WAIT THERE IT IS AGAIN! Wait, nevermind. Clearly just filling space, toodleytoo. Did you hear what names ' + names[rand(names.length - 1)] + ' said to ' + names[rand(names.length - 1)] + '? I did not actually hear. What is a pirates favorite letter? A pirates first love is the C. Get it? Okay, we are done here.')
 end
 puts 'Writers chained to their desks'
 
 puts 'Thinking of titles'
-10000.times do
-  puts '...'
+puts '...'
+1000.times do
   Story.create(title: titles[rand(titles.length - 1)] + ' vol' + rand(100).to_s, description: "A retelling of #{names[rand(names.length - 1)]}'s trials and tribulations.", image: 'https://pmcvariety.files.wordpress.com/2018/09/care-bears.jpg?w=1000&h=563&crop=1', user_id: User.all[rand(User.all.length - 1)].id)
 end
 puts 'Thought of some titles'
-
-# puts 'Writing a couple pages'
-# p1 = Page.new(number: 1, content: 'One two three four', image: 'https://pmcvariety.files.wordpress.com/2018/09/care-bears.jpg?w=1000&h=563&crop=1')
-# s1.pages << p1
-# p1.save
-# puts '...1'
