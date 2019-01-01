@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration[5.2]
       t.integer :number
       t.integer :story_id
       t.string :content
+      t.string :content_2
       t.string :image
 
       t.timestamps

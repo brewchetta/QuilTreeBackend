@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_154405) do
     t.integer "number"
     t.integer "story_id"
     t.string "content"
+    t.string "content_2"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

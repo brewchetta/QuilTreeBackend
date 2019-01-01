@@ -57,7 +57,7 @@ class Api::V1::PagesController < ApplicationController
   end
 
   def page_params
-    params.require(:page).permit(:number, :story_id, :content, :image)
+    params.require(:page).permit(:number, :story_id, :content, :content_2, :image)
   end
 
 end

@@ -1,3 +1,3 @@
 class PageSerializer < ActiveModel::Serializer
-  attributes :id, :number, :content, :story_id, :image
+  attributes :id, :number, :content, :content_2, :story_id, :image
 end
