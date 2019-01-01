@@ -20,6 +20,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
+    @user.update(user_params)
+    render json: @user, status: 202
   end
 
   def delete

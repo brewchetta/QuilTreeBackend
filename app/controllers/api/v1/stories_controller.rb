@@ -21,6 +21,8 @@ class Api::V1::StoriesController < ApplicationController
   end
 
   def update
+    @story.update(story_params)
+    render json: @story, status: 202
   end
 
   def destroy
