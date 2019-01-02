@@ -26,14 +26,14 @@ Page.all.each { |page| page.delete}
 puts 'Smells like Christmas'
 
 puts 'Finding writers'
-1000.times do
-  User.create(name: names[rand(names.length - 1)] + ' ' + names[rand(names.length - 1)], bio:'A beautiful writer with at least a few unique attributes. We love them to death, like literally until they die. OMG I JUST THOUGHT OF SOMETHING. Oh woops, lost it. NO WAIT THERE IT IS AGAIN! Wait, nevermind. Clearly just filling space, toodleytoo. Did you hear what is going on? Me neight. I did not actually hear. What is a pirates favorite letter? A pirates first love is the C. Get it? Okay, we are done here.', image: images[rand(images.length-1)])
+50.times do
+  User.create(name: names[rand(names.length - 1)] + ' ' + names[rand(names.length - 1)], bio:'A beautiful writer with at least a few unique attributes. We love them to death, like literally until they die. OMG I JUST THOUGHT OF SOMETHING. Oh woops, lost it. NO WAIT THERE IT IS AGAIN! Wait, nevermind. Clearly just filling space, toodleytoo. Did you hear what is going on? Me neight. I did not actually hear. What is a pirates favorite letter? A pirates first love is the C. Get it? Okay, we are done here.', image_url: images[rand(images.length - 1)], image_credit: names[rand(names.length - 1)], image_credit_link: 'www.unsplash.com')
   print '.'
 end
 puts 'Writers chained to their desks'
 
 puts 'Thinking of titles'
-10000.times do
+200.times do
   Story.create(title: titles[rand(titles.length - 1)] + ' vol' + rand(100).to_s, description: "A retelling of #{names[rand(names.length - 1)]}'s trials and tribulations.", image: images[rand(images.length - 1)], user_id: User.all[rand(User.all.length - 1)].id)
   print '.'
 end

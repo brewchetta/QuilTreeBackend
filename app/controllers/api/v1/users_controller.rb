@@ -34,7 +34,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :bio, :image)
+    params.require(:user).permit(:name, :bio, :image_url, :image_credit, :image_credit_link)
   end
 
 end
